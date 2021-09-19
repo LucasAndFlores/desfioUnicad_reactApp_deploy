@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import EntregasCard from './components/entregas/cardEntregas/card';
 import FormEntrega from './components/entregas/Form/form';
+import NavBar from './components/nav/nav';
 import './App.css';
 
 function Home () {
 
   const [ entregas, setEntregas ] = useState()
   const [ loading, setLoading ] = useState(true)
+
+
+  function refreshPage() {
+    window.location.reload(true)
+  }
 
 
   
@@ -21,14 +27,13 @@ function Home () {
   }, [])
 
 
-  console.log(entregas)
   
 
   return (
-    <span>
+    <span onSubmit={refreshPage}>
+        <NavBar />
         <FormEntrega />
-        {loading ? "carregando ..." : < EntregasCard entrega={entregas} />}
-        {/* {entregas[0].nome_cliente} */}
+        {loading ? "carregando ..." : < EntregasCard entregas={entregas} />}
 
     </span>
   );
