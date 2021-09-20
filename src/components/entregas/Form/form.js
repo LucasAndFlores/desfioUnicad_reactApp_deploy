@@ -31,7 +31,7 @@ const FormEntrega = () => {
     function onSubmit (env) {
         env.preventDefault()
 
-        axios.post('http://localhost:8000/v1/entregas/', values)
+        axios.post('https://desafiounicadlucas.herokuapp.com/v1/entregas/', values)
 
 
     }

@@ -19,7 +19,7 @@ function Home () {
   
   useEffect ( () => {
     const axiosFunctions = async () => {
-        const entregaDados  = await axios.get('http://localhost:8000/v1/entregas/')
+        const entregaDados  = await axios.get('https://desafiounicadlucas.herokuapp.com/v1/entregas/')
         setEntregas(entregaDados.data)
         setLoading(false)
     }
